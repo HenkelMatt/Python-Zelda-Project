@@ -1,10 +1,10 @@
 import pygame, sys
 from settings import *
 from level import Level
+from debug import debug
 
 class Game:
 	def __init__(self):
-		  
 		# general setup
 		pygame.init()
 		self.screen = pygame.display.set_mode((WIDTH,HEIGTH))
@@ -12,7 +12,7 @@ class Game:
 		self.clock = pygame.time.Clock()
 
 		self.level = Level()
-	
+
 	def run(self):
 		while True:
 			for event in pygame.event.get():
@@ -21,6 +21,7 @@ class Game:
 					sys.exit()
 
 			self.screen.fill('black')
+			# debug('HI')
 			self.level.run()
 			pygame.display.update()
 			self.clock.tick(FPS)
