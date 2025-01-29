@@ -1,1 +1,1 @@
-Bin bei MInute 50:25 und es funktioniert
+Bin bei Minute 1:11:30 und es funktioniert
