@@ -1,1 +1,1 @@
-Bin bei MInute 26:11 und es funktioniert gerade nicht
+Bin bei MInute 50:25 und es funktioniert gerade nicht
