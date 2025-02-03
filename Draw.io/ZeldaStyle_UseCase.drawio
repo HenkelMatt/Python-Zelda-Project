@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.9">
+  <diagram name="Seite-1" id="QVK9Hjw9DDnPwOAztcGD">
+    <mxGraphModel dx="2901" dy="2309" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e4EoEagE3-3BkILACpzR-1" value="Player" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="-580" y="-140" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="e4EoEagE3-3BkILACpzR-4" target="e4EoEagE3-3BkILACpzR-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-4" value="Einstellungen öffn&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;en&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="-260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-5" value="Musikeinstellung ändern" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="-260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="e4EoEagE3-3BkILACpzR-22" target="e4EoEagE3-3BkILACpzR-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="e4EoEagE3-3BkILACpzR-22" target="e4EoEagE3-3BkILACpzR-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-90" y="-120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-24" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e4EoEagE3-3BkILACpzR-23" vertex="1" connectable="0">
+          <mxGeometry x="-0.1882" y="5" relative="1" as="geometry">
+            <mxPoint x="-5" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="e4EoEagE3-3BkILACpzR-22" target="e4EoEagE3-3BkILACpzR-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-22" value="Spiel pausieren" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="-150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-25" value="Zelda Style" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=90;height=30;" parent="1" vertex="1">
+          <mxGeometry x="-490" y="-380" width="800" height="690" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-28" value="extension point: Spielende" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=left;spacingLeft=5;" parent="1" vertex="1">
+          <mxGeometry x="-450" y="-40" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-29" value="condition: Gestorben" style="resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;whiteSpace=wrap;html=1;" parent="e4EoEagE3-3BkILACpzR-28" vertex="1">
+          <mxGeometry width="175" height="25" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-30" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.996;entryY=0.511;entryDx=0;entryDy=0;entryPerimeter=0;" parent="e4EoEagE3-3BkILACpzR-28" target="e4EoEagE3-3BkILACpzR-28" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="50" as="sourcePoint" />
+            <mxPoint x="143.75" y="58.333333333333336" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=0;endArrow=none;" parent="1" source="e4EoEagE3-3BkILACpzR-31" target="e4EoEagE3-3BkILACpzR-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-39" value="&amp;lt;&amp;lt;extends&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e4EoEagE3-3BkILACpzR-33" vertex="1" connectable="0">
+          <mxGeometry x="0.14" y="-1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-31" value="Spiel starten&lt;br&gt;ep: Spielende" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="-140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="e4EoEagE3-3BkILACpzR-32" target="e4EoEagE3-3BkILACpzR-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-32" value="Endscreen öffnen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-34" value="neues Spiel starten" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-50" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4EoEagE3-3BkILACpzR-41" value="Fortfahren" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="-150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="By-NntcNAX06wNvslG7J-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="e4EoEagE3-3BkILACpzR-1" target="e4EoEagE3-3BkILACpzR-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-370" y="-180" as="sourcePoint" />
+            <mxPoint x="-250" y="-180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="By-NntcNAX06wNvslG7J-3" value="Spiel Schließen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="-40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="By-NntcNAX06wNvslG7J-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="e4EoEagE3-3BkILACpzR-32" target="By-NntcNAX06wNvslG7J-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="-100" as="sourcePoint" />
+            <mxPoint x="160" y="-100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="By-NntcNAX06wNvslG7J-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="e4EoEagE3-3BkILACpzR-22" target="By-NntcNAX06wNvslG7J-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="-90" as="sourcePoint" />
+            <mxPoint x="170" y="-90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="By-NntcNAX06wNvslG7J-6" value="Spiel Schließen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
