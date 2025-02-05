@@ -1,1 +1,1 @@
-Bin bei Minute 2:30:26 und es funktioniert aber die Angriff animation ist nicht durchgängig
+Bin bei Minute 3:04:20 und es funktioniert
