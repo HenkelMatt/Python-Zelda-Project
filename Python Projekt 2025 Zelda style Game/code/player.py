@@ -17,6 +17,7 @@ class Player(Entity):
 
         # movement
         self.attacking = False
+        self.attacking_botton_activ = False
         self.attack_cooldown = 400
         self.attack_time = None
         self.obstacle_sprites = obstacle_sprites
@@ -66,9 +67,8 @@ class Player(Entity):
             self.animations[animation] = import_folder(full_path)
 
     def input(self):
+        keys = pygame.key.get_pressed()
         if not self.attacking:
-            keys = pygame.key.get_pressed()
-
             mouse_wheel_state = next(
                 (2 if event.button == 5 else 1 if event.button == 4 else 0 for event in pygame.event.get() if
                  event.type == pygame.MOUSEBUTTONDOWN), 0)
@@ -131,6 +131,8 @@ class Player(Entity):
 
                 self.magic = list(magic_data.keys())[self.magic_index]
 
+        self.attacking_botton_activ = ((keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]) and not pygame.mouse.get_pressed()[1]) and not ((keys[pygame.K_LCTRL] or pygame.mouse.get_pressed()[2]) and not pygame.mouse.get_pressed()[1])
+
     def get_status(self):
 
         # idle status
@@ -155,8 +157,9 @@ class Player(Entity):
 
         if self.attacking:
             if current_time - self.attack_time >= self.attack_cooldown + weapon_data[self.weapon]['cooldown']:
-                self.attacking = False
                 self.destroy_attack()
+                if not self.attacking_botton_activ:
+                    self.attacking = False
 
         if not self.can_switch_weapon:
             if current_time - self.weapon_switch_time >= self.switch_duration_cooldown:

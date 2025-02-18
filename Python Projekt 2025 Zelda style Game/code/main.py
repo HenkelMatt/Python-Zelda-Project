@@ -16,9 +16,19 @@ class Game:
 	def run(self):
 		while True:
 			for event in pygame.event.get():
+				keys = pygame.key.get_pressed()
+
 				if event.type == pygame.QUIT:
 					pygame.quit()
 					sys.exit()
+
+				if keys[pygame.K_ESCAPE]:  # Schließen mit ESC
+					pygame.quit()
+					sys.exit()
+
+				if keys[pygame.K_r]:  # Neustart mit R
+					game = Game()
+					game.run()
 
 			self.screen.fill('black')
 			#debug('HI')
