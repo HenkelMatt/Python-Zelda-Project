@@ -93,45 +93,46 @@ class Player(Entity):
             else:
                 self.direction.x = 0
 
-            # attack input
-            if (keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]) and not pygame.mouse.get_pressed()[1]:
-                self.attacking = True
-                self.attack_time = pygame.time.get_ticks()
-                self.create_attack()
-                self.weapon_attack_sound.play()
+            if not self.attacking_botton_activ:
+                # attack input
+                if (keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]) and not pygame.mouse.get_pressed()[1]:
+                    self.attacking = True
+                    self.attack_time = pygame.time.get_ticks()
+                    self.create_attack()
+                    self.weapon_attack_sound.play()
 
-            if (keys[pygame.K_q] or pygame.mouse.get_pressed()[1] and pygame.mouse.get_pressed()[0]) and self.can_switch_weapon or mouse_wheel_state == 1:
-                self.can_switch_weapon = False
-                self.weapon_switch_time = pygame.time.get_ticks()
+                if (keys[pygame.K_q] or pygame.mouse.get_pressed()[1] and pygame.mouse.get_pressed()[0]) and self.can_switch_weapon or mouse_wheel_state == 1:
+                    self.can_switch_weapon = False
+                    self.weapon_switch_time = pygame.time.get_ticks()
 
-                if self.weapon_index < len(list(weapon_data.keys())) - 1:
-                    self.weapon_index += 1
-                else:
-                    self.weapon_index = 0
+                    if self.weapon_index < len(list(weapon_data.keys())) - 1:
+                        self.weapon_index += 1
+                    else:
+                        self.weapon_index = 0
 
-                self.weapon = list(weapon_data.keys())[self.weapon_index]
+                    self.weapon = list(weapon_data.keys())[self.weapon_index]
 
-            # magic input
-            if (keys[pygame.K_LCTRL] or pygame.mouse.get_pressed()[2]) and not pygame.mouse.get_pressed()[1]:
-                self.attacking = True
-                self.attack_time = pygame.time.get_ticks()
-                style = list(magic_data.keys())[self.magic_index]
-                strength = list(magic_data.values())[self.magic_index]['strength'] + self.stats['magic']
-                cost = list(magic_data.values())[self.magic_index]['cost']
-                self.create_magic(style, strength, cost)
+                # magic input
+                if (keys[pygame.K_LCTRL] or pygame.mouse.get_pressed()[2]) and not pygame.mouse.get_pressed()[1]:
+                    self.attacking = True
+                    self.attack_time = pygame.time.get_ticks()
+                    style = list(magic_data.keys())[self.magic_index]
+                    strength = list(magic_data.values())[self.magic_index]['strength'] + self.stats['magic']
+                    cost = list(magic_data.values())[self.magic_index]['cost']
+                    self.create_magic(style, strength, cost)
 
-            if (keys[pygame.K_e] or pygame.mouse.get_pressed()[1] and pygame.mouse.get_pressed()[2]) and self.can_switch_magic  or mouse_wheel_state == 2:
-                self.can_switch_magic = False
-                self.magic_switch_time = pygame.time.get_ticks()
+                if (keys[pygame.K_e] or pygame.mouse.get_pressed()[1] and pygame.mouse.get_pressed()[2]) and self.can_switch_magic  or mouse_wheel_state == 2:
+                    self.can_switch_magic = False
+                    self.magic_switch_time = pygame.time.get_ticks()
 
-                if self.magic_index < len(list(magic_data.keys())) - 1:
-                    self.magic_index += 1
-                else:
-                    self.magic_index = 0
+                    if self.magic_index < len(list(magic_data.keys())) - 1:
+                        self.magic_index += 1
+                    else:
+                        self.magic_index = 0
 
-                self.magic = list(magic_data.keys())[self.magic_index]
+                    self.magic = list(magic_data.keys())[self.magic_index]
 
-        self.attacking_botton_activ = ((keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]) and not pygame.mouse.get_pressed()[1]) and not ((keys[pygame.K_LCTRL] or pygame.mouse.get_pressed()[2]) and not pygame.mouse.get_pressed()[1])
+        self.attacking_botton_activ = ((keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]) and not pygame.mouse.get_pressed()[1]) or ((keys[pygame.K_LCTRL] or pygame.mouse.get_pressed()[2]) and not pygame.mouse.get_pressed()[1])
 
     def get_status(self):
 
@@ -158,8 +159,7 @@ class Player(Entity):
         if self.attacking:
             if current_time - self.attack_time >= self.attack_cooldown + weapon_data[self.weapon]['cooldown']:
                 self.destroy_attack()
-                if not self.attacking_botton_activ:
-                    self.attacking = False
+                self.attacking = False
 
         if not self.can_switch_weapon:
             if current_time - self.weapon_switch_time >= self.switch_duration_cooldown:
