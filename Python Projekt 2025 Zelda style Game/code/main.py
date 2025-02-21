@@ -36,6 +36,7 @@ class Game:
 						sys.exit()
 
 					if keys[pygame.K_r]:  # Neustart mit R
+						pygame.mixer.stop()
 						game = Game()
 						game.run()
 
@@ -44,6 +45,16 @@ class Game:
 			self.level.run()
 			pygame.display.update()
 			self.clock.tick(FPS)
+			self.check_death()
+
+	def check_death(self):
+		if self.level.player.health <= 0:
+			self.level.player.kill()
+			pygame.mixer.stop()
+			self.level.player.death_sound.play()
+			pygame.time.wait(5000)
+			game = Game()
+			game.run()
 
 if __name__ == '__main__':
 	game = Game()

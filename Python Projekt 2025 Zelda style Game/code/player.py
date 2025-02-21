@@ -218,18 +218,9 @@ class Player(Entity):
         else:
             self.energy = self.stats['energy']
 
-    def check_death(self):
-        if self.health <= 0:
-            self.kill()
-            pygame.mixer.stop()
-            self.death_sound.play()
-            pygame.time.wait(5000)
-            pygame.quit()
-
 
     def update(self):
         self.input()
-        self.check_death()
         self.cooldowns()
         self.get_status()
         self.animate()
