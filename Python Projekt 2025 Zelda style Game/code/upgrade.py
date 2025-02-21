@@ -35,7 +35,7 @@ class Upgrade:
 				self.can_move = False
 				self.selection_time = pygame.time.get_ticks()
 
-			if keys[pygame.K_SPACE]:
+			if (keys[pygame.K_SPACE] or pygame.mouse.get_pressed()[0]):
 				self.can_move = False
 				self.selection_time = pygame.time.get_ticks()
 				self.item_list[self.selection_index].trigger(self.player)
